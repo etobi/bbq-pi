@@ -68,7 +68,47 @@
     <!-- Main content -->
     <section class="content">
 
-      <!-- Your Page Content Here -->
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-red"><i class="fa fa-sign-in"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Food - Ch #0</span>
+          <span class="info-box-number"><span id="bbqpi-temp-channel0">-</span> °C</span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
+    </div><!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-red"><i class="fa fa-sign-out"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Kettle - Ch #1</span>
+          <span class="info-box-number"><span id="bbqpi-temp-channel1">-</span> °C</span>
+
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
+    </div><!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-gray"><i class="fa fa-square-o"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text"></span>
+          <span class="info-box-number">°C</span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
+    </div><!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-gray"><i class="fa fa-square-o"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">
+          	
+          </span>
+          <span class="info-box-number">°C</span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
+    </div><!-- /.col -->
+  </div>
 
     </section>
     <!-- /.content -->
@@ -101,7 +141,6 @@
       <div class="tab-pane" id="control-sidebar-settings-tab">
         <form method="post">
           <h3 class="control-sidebar-heading">Settings</h3>
-
           <!-- /.form-group -->
         </form>
       </div>
@@ -116,6 +155,8 @@
 <script src="adminlte/plugins/jQuery/jQuery-2.2.0.min.js"></script>
 <script src="adminlte/bootstrap/js/bootstrap.min.js"></script>
 <script src="adminlte/dist/js/app.min.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<script src="js/bbqpi-client.js"></script>
 
 </body>
 </html>
