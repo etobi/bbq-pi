@@ -52,7 +52,11 @@ $(document).ready(function () {
 					hoverable: true,
 					borderColor: "#f3f3f3",
 					borderWidth: 1,
-					tickColor: "#f3f3f3"
+					tickColor: "#f3f3f3",
+					markings: [
+						{ color: "#f6f6f6", yaxis: { from: 115 } },
+						{ color: "#f6f6f6", yaxis: { to: 105 } }
+					]
 				},
 				lines: {
 					fill: false,
@@ -60,12 +64,19 @@ $(document).ready(function () {
 				},
 				series: {
 					lines: {show: true},
-					points: {show: true}
+					points: {show: false}
 				},
-				yaxis: {},
+				yaxis: {
+					minTickSize: 1
+					// min: 15,
+					// max: 250
+				},
 				xaxis: {
 					mode: "time",
-					timeformat: "%H:%M:%S"
+					timeformat: "%H:%M",
+					minTickSize: [10, "second"],
+					min: (Date.now() - 3600000),
+					max: null // (Date.now())
 				}
 			});
 
