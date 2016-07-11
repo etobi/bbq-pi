@@ -28,7 +28,6 @@ $(document).ready(function () {
 	socket.on('dataSeries', function (data) {
 		jQuery.each(data, function (index, value) {
 			var key = 'temp-' + index;
-			console.debug(key, value);
 			if (charts[key]) {
 				var plot = charts[key];
 				var allData = plot.getData();
@@ -54,8 +53,8 @@ $(document).ready(function () {
 					borderWidth: 1,
 					tickColor: "#f3f3f3",
 					markings: [
-						{ color: "#f6f6f6", yaxis: { from: 115 } },
-						{ color: "#f6f6f6", yaxis: { to: 105 } }
+						{ color: "#f6f6f6", yaxis: { from: 130 } },
+						{ color: "#f6f6f6", yaxis: { to: 110 } }
 					]
 				},
 				lines: {
@@ -74,12 +73,13 @@ $(document).ready(function () {
 				xaxis: {
 					mode: "time",
 					timeformat: "%H:%M",
+					timezone: "browser",
 					minTickSize: [10, "second"],
-					min: (Date.now() - 3600000),
+					min: (Date.now() - 1000 * 60 * 60 * 4),
 					max: null // (Date.now())
 				}
 			});
-
+/*
 	charts['temp-channel1'] = $.plot($("#bbqpi-chart-temp-channel1"),
 			[
 				{
@@ -108,5 +108,6 @@ $(document).ready(function () {
 					timeformat: "%H:%M:%S"
 				}
 			});
+*/
 });
 
