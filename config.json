@@ -1,3 +1,27 @@
 {
-  "port": 8081
+  "port": 8081,
+  "probes": [
+    {
+      "name": "Fantast Ch#0",
+      "channel": 0,
+      "maxvalue": 4096,
+      "resistor": 47,
+      "a": 0.00334519,
+      "b": 0.000243825,
+      "c": 0.00000261726,
+      "rn": 220,
+      "adjust": 1.105
+    },
+    {
+      "name": "Fantast Ch#1",
+      "channel": 1,
+      "maxvalue": 4096,
+      "resistor": 47,
+      "a": 0.00334519,
+      "b": 0.000243825,
+      "c": 0.00000261726,
+      "rn": 220,
+      "adjust": 1.105
+    }
+  ]
 }
