@@ -12,11 +12,11 @@
 	<link rel="stylesheet" href="adminlte/dist/css/AdminLTE.min.css">
 	<link rel="stylesheet" href="adminlte/dist/css/skins/skin-red.min.css">
 
-	<link rel="stylesheet" href="bbqpi.css">
+	<link rel="stylesheet" href="css/bbqpi.css">
 </head>
 
 <body class="hold-transition skin-red">
-<div class="wrapper">
+<div class="wrapper" id="app">
 
 	<header class="main-header">
 
@@ -63,6 +63,17 @@
 		<!-- Main content -->
 		<section class="content">
 
+			<div class="row">
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="info-box">
+						<span class="info-box-icon bg-red"><i class="fa fa-sign-in"></i></span>
+						<div class="info-box-content">
+							<span class="info-box-text">Test</span>
+							<span class="info-box-number">{{ foo }} °C</span>
+						</div>
+					</div>
+				</div>
+			</div>
 			<!-- content here -->
 
 		</section>
@@ -114,6 +125,7 @@
 <script src="adminlte/bootstrap/js/bootstrap.min.js"></script>
 <script src="adminlte/dist/js/app.min.js"></script>
 <script src="socket.io/socket.io.js"></script>
+<script src="vue/vue.min.js"></script>
 <script src="js/bbqpi-client.js"></script>
 
 </body>
