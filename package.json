@@ -1,12 +1,23 @@
 {
   "name": "bbq-pi",
-  "version": "0.0.1",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
   "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.etobi.de:2222/etobi/bbq-pi.git"
+  },
+  "author": "Tobias Liebig",
+  "license": "ISC",
   "dependencies": {
     "express": "3.x",
     "ip": "*",
-    "jsonfile": "^2.3.1",
-    "mcp-adc": "*",
-    "socket.io": "*"
+    "socket.io": "*",
+    "etobi-shield": "git+ssh://git@git.etobi.de:2222/etobi/etobi-shield.git"
   }
 }
+
