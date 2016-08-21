@@ -63,18 +63,41 @@
 		<!-- Main content -->
 		<section class="content">
 
-			<div class="row">
+			<div class="row" v-for="probe in probes">
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<div class="info-box">
-						<span class="info-box-icon bg-red"><i class="fa fa-sign-in"></i></span>
-						<div class="info-box-content">
-							<span class="info-box-text">Test</span>
-							<span class="info-box-number">{{ foo }} °C</span>
+					<div class="small-box {{ probe.color }}">
+						<div class="inner">
+							<h3>{{ probe.current }} °C</h3>
+
+							<p>{{ probe.title }}</p>
+						</div>
+						<div class="icon">
+							<i class="fa {{ probe.icon }}"></i>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- content here -->
+
+			<div class="row">
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="box box-default">
+						<div class="box-header with-border">
+							<h3 class="box-title">Status</h3>
+
+							<div class="box-tools pull-right">
+								<button type="button" class="btn btn-box-tool" data-widget="collapse">
+									<i class="fa fa-plus"></i>
+								</button>
+							</div>
+						</div>
+						<div class="box-body">
+							Status: {{ status }} <br/>
+							Update: {{ lastUpdate }}
+						</div>
+					</div>
+				</div>
+			</div>
+
 
 		</section>
 		<!-- /.content -->
@@ -125,6 +148,7 @@
 <script src="adminlte/bootstrap/js/bootstrap.min.js"></script>
 <script src="adminlte/dist/js/app.min.js"></script>
 <script src="socket.io/socket.io.js"></script>
+<script src="moment/moment-with-locales.min.js"></script>
 <script src="vue/vue.min.js"></script>
 <script src="js/bbqpi-client.js"></script>
 

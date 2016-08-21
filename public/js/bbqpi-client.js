@@ -4,11 +4,15 @@ $(document).ready(function () {
 	var vm = new Vue({
 		el: '#app',
 		data: {
-			foo: '...'
+			lastUpdate: null,
+			status: '',
+			probes: {}
 		},
 		created: function () {
 			socket.on('updated-dashboard-values', function (data) {
-				this.foo = data.foo;
+				this.lastUpdate = data.lastUpdate;
+				this.status = data.status;
+				this.probes = data.probes;
 			}.bind(this));
 		}
 	});

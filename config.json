@@ -2,7 +2,7 @@
   "port": 8081,
   "probes": [
     {
-      "name": "Fantast Ch#0",
+      "title": "Fantast Ch#0",
       "channel": 0,
       "maxvalue": 4096,
       "resistor": 47,
@@ -10,10 +10,12 @@
       "b": 0.000243825,
       "c": 0.00000261726,
       "rn": 220,
-      "adjust": 1.105
+      "adjust": 1.105,
+      "icon": "fa-sign-in",
+      "color": "bg-aqua"
     },
     {
-      "name": "Fantast Ch#1",
+      "title": "Fantast Ch#1",
       "channel": 1,
       "maxvalue": 4096,
       "resistor": 47,
@@ -21,7 +23,9 @@
       "b": 0.000243825,
       "c": 0.00000261726,
       "rn": 220,
-      "adjust": 1.105
+      "adjust": 1.105,
+      "icon": "fa-sign-out",
+      "color": "bg-blue "
     }
   ]
 }
