@@ -6,13 +6,12 @@ $(document).ready(function () {
 		data: {
 			lastUpdate: null,
 			status: '',
-			probes: {}
+			probes: []
 		},
 		created: function () {
-			socket.on('updated-dashboard-values', function (data) {
-				this.lastUpdate = data.lastUpdate;
-				this.status = data.status;
-				this.probes = data.probes;
+			socket.on('updated-probe-value', function (data) {
+				this.lastUpdate = data.timestamp;
+				this.probes.$set(data.probe.channel, data.probe);
 			}.bind(this));
 		}
 	});
