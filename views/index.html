@@ -63,8 +63,8 @@
 		<!-- Main content -->
 		<section class="content">
 
-			<div class="row" v-for="probe in probes">
-				<div class="col-md-3 col-sm-6 col-xs-12" v-on:click="refreshProbe(probe)">
+			<div class="row">
+				<div class="col-md-3 col-sm-6 col-xs-12" v-on:click="refreshProbe(probe)" v-for="probe in probes">
 					<div class="small-box {{ probe.color }}">
 						<div class="inner">
 							<h3>{{ probe.current }} °C</h3>
@@ -148,6 +148,7 @@
 <script src="adminlte/dist/js/app.min.js"></script>
 <script src="socket.io/socket.io.js"></script>
 <script src="vue/vue.min.js"></script>
+
 <script src="js/bbqpi-client.js"></script>
 
 </body>
