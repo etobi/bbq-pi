@@ -8,8 +8,14 @@ $(document).ready(function () {
 			status: '',
 			probes: []
 		},
+		methods: {
+			refreshProbe: function (probe) {
+				console.log('refresh');
+				socket.emit('update-probe', {probe: probe});
+			}
+		},
 		created: function () {
-			socket.on('updated-probe-value', function (data) {
+			socket.on('updated-probe', function (data) {
 				this.lastUpdate = data.timestamp;
 				this.probes.$set(data.probe.channel, data.probe);
 			}.bind(this));
