@@ -6,7 +6,8 @@ $(document).ready(function () {
 		data: {
 			lastUpdate: null,
 			status: '',
-			probes: []
+			probes: [],
+			sessionIdentifier: ''
 		},
 		methods: {
 			refreshProbe: function (probe) {
@@ -15,8 +16,14 @@ $(document).ready(function () {
 			}
 		},
 		created: function () {
+
+			socket.on('updated-session', function (data) {
+				this.sessionIdentifier = data.sessionIdentifier;
+			}.bind(this));
+
 			socket.on('updated-probe', function (data) {
 				this.lastUpdate = data.timestamp;
+				// TODO use object instead
 				this.probes.$set(data.probe.channel, data.probe);
 			}.bind(this));
 		}
