@@ -2,7 +2,7 @@
   "port": 8081,
   "probes": [
     {
-      "title": "Fantast Ch#0",
+      "title": "Kanal 1",
       "channel": 0,
       "maxvalue": 4096,
       "resistor": 47,
@@ -12,10 +12,10 @@
       "rn": 220,
       "adjust": 1.105,
       "icon": "fa-sign-in",
-      "color": "bg-aqua"
+      "color": "bg-green"
     },
     {
-      "title": "Fantast Ch#1",
+      "title": "Kanal 2",
       "channel": 1,
       "maxvalue": 4096,
       "resistor": 47,
@@ -25,7 +25,33 @@
       "rn": 220,
       "adjust": 1.105,
       "icon": "fa-sign-out",
-      "color": "bg-blue "
+      "color": "bg-aqua"
+    },
+    {
+      "title": "Kanal 3",
+      "channel": 2,
+      "maxvalue": 4096,
+      "resistor": 47,
+      "a": 0.00334519,
+      "b": 0.000243825,
+      "c": 0.00000261726,
+      "rn": 220,
+      "adjust": 1.105,
+      "icon": "fa-sign-out",
+      "color": "bg-aqua"
+    },
+    {
+      "title": "Kanal 4",
+      "channel": 3,
+      "maxvalue": 4096,
+      "resistor": 47,
+      "a": 0.00334519,
+      "b": 0.000243825,
+      "c": 0.00000261726,
+      "rn": 220,
+      "adjust": 1.105,
+      "icon": "fa-sign-out",
+      "color": "bg-aqua"
     }
   ]
 }
