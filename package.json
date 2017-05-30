@@ -23,6 +23,7 @@
     "uuid": "*",
     "socket.io": "*",
     "vue": "1.x",
-    "redis": "*"
+    "redis": "*",
+    "mqtt": "*"
   }
 }
