@@ -1,0 +1,38 @@
+
+echo "init gpio"
+#blau
+gpio mode 15 out
+gpio write 15 0
+
+#gelb
+gpio mode 1 out
+gpio write 1 0
+
+#rot
+gpio mode 2 out
+gpio write 2 0
+
+#grün
+gpio mode 16 out
+gpio write 16 0
+
+echo "start bbq-pi"
+# sudo -u pi /usr/local/bin/node /home/pi/bbq-pi/start.js > /dev/null 2>&1 &
+# sudo -u elasticsearch /usr/share/elasticsearch/elasticsearch-2.3.5/bin/elasticsearch > /dev/null 2>&1 &
+
+sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch -d -p /var/run/elasticsearch.pid -Des.default.config=/etc/elasticsearch/elasticsearch.yml -Des.default.path.home=/usr/share/elasticsearch -Des.default.path.logs=/var/log/elasticsearch -Des.default.path.data=/var/lib/elasticsearch -Des.default.path.work=/tmp/elasticsearch -Des.default.path.conf=/etc/elasticsearch > /dev/null 2>&1 &
+
+sudo -u pi $(cd /home/pi/bbq-pi/; /usr/local/bin/npm run start) > /dev/null 2>&1 &
+
+
+sudo /usr/local/bin/lt -s "etobibbqpi" -p 8081 > /dev/null 2>&1 &
+
+gpio write 2 1
+sleep 1
+gpio write 2 0
+sleep 1
+gpio write 16 1
+sleep 1
+gpio write 16 0
+
+

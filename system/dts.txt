@@ -1,0 +1,3 @@
+sudo dtc -@ -I dts -O dtb -o ~/mygpio-overlay.dtb ~/mygpio-overlay.dts
+sudo cp ~/mygpio-overlay.dtb /root/overlay
+

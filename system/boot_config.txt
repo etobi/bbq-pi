@@ -1,0 +1,3 @@
+disable_camera_led=1
+dtoverlay=w1-gpio
+device_tree_overlay=overlays/mygpio-overlay.dtb
