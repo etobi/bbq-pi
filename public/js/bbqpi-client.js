@@ -1,33 +1,32 @@
 $(document).ready(function () {
 	var socket = io();
-
 	var vm = new Vue({
 		el: '#app',
 		data: {
 			lastUpdate: null,
 			status: '',
-			probes: [],
+			probes: {},
 			sessionIdentifier: ''
 		},
-		methods: {
-			refreshProbe: function (probe) {
-				console.log('refresh');
-				socket.emit('update-probe', {probe: probe});
-			}
-		},
+		methods: {},
 		created: function () {
+			socket.on('probes-config-update', function (data) {
+				var that = this;
+				$(data).each(function (index) {
+					Vue.set(that.probes, data[index].channel, data[index]);
+				});
+			}.bind(this));
 
-			socket.on('updated-session', function (data) {
+			socket.on('session-update', function (data) {
 				this.sessionIdentifier = data.sessionIdentifier;
 			}.bind(this));
 
-			socket.on('updated-probe', function (data) {
+			socket.on('probe-update', function (data) {
 				this.lastUpdate = data.timestamp;
-				// TODO use object instead
-				this.probes.$set(data.probe.channel, data.probe);
+				Vue.set(this.probes[data.channel], 'active', data.active);
+				Vue.set(this.probes[data.channel], 'value', data.value);
 			}.bind(this));
 		}
 	});
-
 });
 

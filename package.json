@@ -22,7 +22,7 @@
     "ip": "*",
     "uuid": "*",
     "socket.io": "*",
-    "vue": "1.x",
+    "vue": "2",
     "redis": "*",
     "mqtt": "*"
   }
