@@ -27,7 +27,7 @@
     "vue": "2"
   },
   "optionalDependencies": {
-    "etobi-shield": "ssh://git@github.com:etobi/etobi-shield.git",
-    "etobi-shield-dummy": "ssh://git@github.com:etobi/etobi-shield-dummy.git"
+    "etobi-shield": "https://github.com/etobi/etobi-shield.git",
+    "etobi-shield-dummy": "https://github.com/etobi/etobi-shield-dummy.git"
   }
 }
