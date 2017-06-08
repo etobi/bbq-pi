@@ -110,6 +110,10 @@ $(document).ready(function () {
 							}
 					);
 				}
+			},
+			updateCamera: function () {
+				var ts = new Date().getTime();
+				$('#camera').attr('src', '/camera.jpg?' + ts);
 			}
 		},
 
@@ -134,6 +138,10 @@ $(document).ready(function () {
 				this.lastUpdate = new Date(data.timestamp);
 				Vue.set(this.probes[data.channel], 'active', data.active);
 				Vue.set(this.probes[data.channel], 'value', data.value);
+			}.bind(this));
+
+			socket.on('camera-update', function (data) {
+				this.updateCamera();
 			}.bind(this));
 		}
 	});

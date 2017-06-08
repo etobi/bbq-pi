@@ -120,7 +120,26 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="row">
+				<div class="col-md-6 col-xs-12">
+					<div class="box box-default">
+						<div class="box-header with-border">
+							<h3 class="box-title">Camera</h3>
+
+							<div class="box-tools pull-right">
+								<button type="button" class="btn btn-box-tool" data-widget="collapse">
+									<i class="fa fa-minus"></i>
+								</button>
+								<button type="button" class="btn btn-box-tool" v-on:click.prevent="updateCamera()"><i class="fa fa-refresh"></i>
+								</button>
+							</div>
+						</div>
+						<div class="box-body">
+							<img src="/camera.jpg" class="img-responsive pad" id="camera" />
+						</div>
+					</div>
+				</div>
 				<div class="col-md-6 col-xs-12">
 					<div class="box box-default">
 						<div class="box-header with-border">
