@@ -12,7 +12,8 @@
       "rn": 220,
       "adjust": 1.105,
       "icon": "fa-sign-in",
-      "color": "bg-green"
+      "class": "bg-light-blue",
+      "color": "#3c8dbc"
     },
     {
       "title": "Kanal 2",
@@ -25,7 +26,8 @@
       "rn": 220,
       "adjust": 1.105,
       "icon": "fa-sign-out",
-      "color": "bg-aqua"
+      "class": "bg-aqua",
+      "color": "#00c0ef"
     },
     {
       "title": "Kanal 3",
@@ -38,7 +40,8 @@
       "rn": 220,
       "adjust": 1.105,
       "icon": "fa-sign-out",
-      "color": "bg-aqua"
+      "class": "bg-teal",
+      "color": "#39CCCC"
     },
     {
       "title": "Kanal 4",
@@ -51,7 +54,8 @@
       "rn": 220,
       "adjust": 1.105,
       "icon": "fa-sign-out",
-      "color": "bg-aqua"
+      "class": "bg-purple",
+      "color": "#605ca8"
     }
   ]
 }

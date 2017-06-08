@@ -1,7 +1,7 @@
 {
   "name": "bbq-pi",
   "description": "",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "main": "server.js",
   "private": true,
   "bin": {
@@ -19,11 +19,14 @@
   "dependencies": {
     "etobi-shield": "git+ssh://git@git.etobi.de:2222/etobi/etobi-shield.git",
     "express": "3.x",
+    "influx": "^5.0.0-alpha.4",
     "ip": "*",
-    "uuid": "*",
-    "socket.io": "*",
-    "vue": "2",
+    "moment": "^2.18.1",
+    "mqtt": "*",
     "redis": "*",
-    "mqtt": "*"
+    "rickshaw": "*",
+    "socket.io": "*",
+    "uuid": "*",
+    "vue": "2"
   }
 }
