@@ -23,8 +23,6 @@
     "ip": "*",
     "moment": "^2.18.1",
     "mqtt": "*",
-    "redis": "*",
-    "rickshaw": "*",
     "socket.io": "*",
     "uuid": "*",
     "vue": "2"
