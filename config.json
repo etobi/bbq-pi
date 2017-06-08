@@ -30,20 +30,6 @@
       "color": "#00c0ef"
     },
     {
-      "title": "Kanal 3",
-      "channel": 2,
-      "maxvalue": 4096,
-      "resistor": 47,
-      "a": 0.00334519,
-      "b": 0.000243825,
-      "c": 0.00000261726,
-      "rn": 220,
-      "adjust": 1.105,
-      "icon": "fa-sign-out",
-      "class": "bg-teal",
-      "color": "#39CCCC"
-    },
-    {
       "title": "Kanal 4",
       "channel": 3,
       "maxvalue": 4096,
@@ -56,6 +42,20 @@
       "icon": "fa-sign-out",
       "class": "bg-purple",
       "color": "#605ca8"
+    },
+    {
+      "title": "Kanal 5",
+      "channel": 4,
+      "maxvalue": 4096,
+      "resistor": 47,
+      "a": 0.00334519,
+      "b": 0.000243825,
+      "c": 0.00000261726,
+      "rn": 220,
+      "adjust": 1.105,
+      "icon": "fa-sign-out",
+      "class": "bg-teal",
+      "color": "#39CCCC"
     }
   ]
 }
