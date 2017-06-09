@@ -1,6 +1,9 @@
 $(document).ready(function () {
 	var socket = io();
 
+	$('#linkrpimonitor').attr('href', 'http://' + window.location.hostname + ':8888/');
+	$('#linkinfluxdb').attr('href', 'http://' + window.location.hostname + ':8083/');
+
 	Vue.filter('formatDateDDMMYYHHMM', function (value) {
 		if (value) {
 			return moment(value).format('DD.MM.YYYY hh:mm')
