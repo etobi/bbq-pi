@@ -1,5 +1,20 @@
 {
   "port": 8081,
+  "features": {
+    "mqtt": false,
+    "camera": false,
+    "sysinfo": false,
+    "display": false
+  },
+  "updateInterval": {
+    "probes": 5000,
+    "sysinfo": 60000
+  },
+  "influxdb": {
+    "host": "localhost",
+    "database": "bbq-pi",
+    "measurement": "temp"
+  },
   "probes": [
     {
       "title": "Kanal 1",
