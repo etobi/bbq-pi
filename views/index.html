@@ -57,6 +57,11 @@
 					</a>
 				</li>
 				<li>
+					<a href="/views/graph.html" target="_blank" id="linkgraph">
+						<i class="fa fa-graph"></i> <span>Graph</span></i>
+					</a>
+				</li>
+				<li>
 					<a href="/" target="_blank" id="linkinfluxdb">
 						<i class="fa fa-database"></i> <span>InfluxDB</span></i>
 					</a>
@@ -87,9 +92,22 @@
 				<div class="col-md-4 col-sm-6 col-xs-6" v-for="probe in probes">
 					<div v-bind:class="(probe.active ? probe.class : probe.class + ' disabled') + ' small-box'">
 						<div class="inner">
-							<h3>{{ probe.active ? probe.value : '-' }} °C</h3>
-
-							<p>{{ probe.title }}</p>
+							<div class="row">
+								<div class="col-xs-12">
+								<h3>{{ probe.active ? probe.value : '-' }} °C</h3>
+								<p>{{ probe.title }}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-4">
+									<label>Min:</label>
+									<input v-model="probe.min" v-on:change="updateMinMax(probe)" type="text" class="form-control" placeholder="min" value="" />
+								</div>
+								<div class="col-xs-4">
+									<label>Max:</label>
+									<input v-model="probe.max" v-on:change="updateMinMax(probe)" type="text" class="form-control" placeholder="max" value="" />
+								</div>
+							</div>
 						</div>
 						<div class="icon">
 							<i class="fa" v-bind:class="probe.icon ? probe.icon : '' "></i>

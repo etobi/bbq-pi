@@ -27,9 +27,9 @@ $(document).ready(function () {
 			tempchart: null
 		},
 		methods: {
-			executeChartQuery: function(queryInput) {
+			executeChartQuery: function (queryInput) {
 				console.log($(queryInput));
-				var query = $(queryInput).val();	
+				var query = $(queryInput).val();
 				this.updateTempchart(query);
 			},
 			setTempchartTimerange: function (timerange, aggregation) {
@@ -62,8 +62,9 @@ $(document).ready(function () {
 								fill: true,
 								color: "#d2d6de"
 							},
-legend: {
-    show: false },
+							legend: {
+								show: false
+							},
 							yaxis: {
 								show: true
 							},
@@ -126,6 +127,9 @@ legend: {
 			updateCamera: function () {
 				var ts = new Date().getTime();
 				$('#camera').attr('src', '/camera.jpg?' + ts);
+			},
+			updateMinMax: function(probe) {
+				socket.emit('probes-minmax-update', probe);
 			}
 		},
 

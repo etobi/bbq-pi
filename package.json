@@ -25,7 +25,8 @@
     "pi-camera": "^0.1.5",
     "socket.io": "*",
     "uuid": "*",
-    "vue": "2"
+    "vue": "2",
+    "request": "*"
   },
   "optionalDependencies": {
     "etobi-shield": "https://github.com/etobi/etobi-shield.git",
