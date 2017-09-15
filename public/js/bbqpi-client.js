@@ -27,6 +27,11 @@ $(document).ready(function () {
 			tempchart: null
 		},
 		methods: {
+			executeChartQuery: function(queryInput) {
+				console.log($(queryInput));
+				var query = $(queryInput).val();	
+				this.updateTempchart(query);
+			},
 			setTempchartTimerange: function (timerange, aggregation) {
 				this.tempchartTimerange = timerange;
 				this.tempchartAggregation = aggregation;
@@ -51,19 +56,21 @@ $(document).ready(function () {
 								shadowSize: 0,
 								color: "#d2d6de",
 								lines: {show: true},
-								points: {show: true}
+								points: {show: false}
 							},
 							lines: {
 								fill: true,
 								color: "#d2d6de"
 							},
+legend: {
+    show: false },
 							yaxis: {
 								show: true
 							},
 							xaxis: {
 								show: true,
 								mode: 'time',
-								timezone: 'browser'
+								// timezone: 'browser'
 							}
 						});
 
@@ -81,18 +88,20 @@ $(document).ready(function () {
 					}
 				});
 			},
-			updateTempchart: function () {
+			updateTempchart: function (query) {
 				if (this.session.identifier && $('#tempchart').is(':visible')) {
 					var that = this;
 
 					var influxdb = 'http://' + window.location.hostname + ':8086/query';
 
-					var query = "SELECT MEAN(value) FROM temp " +
+					if (!query) {
+						query = "SELECT MEAN(value) FROM temp " +
 								"WHERE \"sessionIdentifier\" = '" + this.session.identifier + "' " +
 								"AND time > now() - " + this.tempchartTimerange +
 								" GROUP BY probe, time(" + this.tempchartAggregation + "),* fill(0)";
+					}
 					$.get(influxdb, {
-								db: 'bbqpi',
+								db: 'bbq-pi',
 								q: query
 							},
 							function (influxData) {
@@ -133,7 +142,7 @@ $(document).ready(function () {
 				this.initTempchart();
 				this.updateTempchart();
 				window.setInterval(function () {
-					this.updateTempchart();
+					// this.updateTempchart();
 				}.bind(this), 10000);
 			}.bind(this));
 
